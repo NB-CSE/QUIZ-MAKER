@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101426">
+  <title>Quiz Maker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="#">Quiz Maker</a>
+      <div class="top-info">
+        <span class="status-dot"></span>
+        <span>Interactive Quiz</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <span class="eyebrow">LEARN SOMETHING NEW</span>
+        <h1>Challenge your <span>knowledge.</span></h1>
+        <p>Create your own quiz or test yourself with questions on
+          science, technology, maths and general knowledge.</p>
+      </section>
+
+      <div class="tabs">
+        <button class="tab active" data-view="play">Take a quiz</button>
+        <button class="tab" data-view="create">Create a quiz</button>
+      </div>
+
+      <section id="playView" class="panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">YOUR NEXT CHALLENGE</span>
+            <h2>Knowledge check</h2>
+          </div>
+          <span id="questionCount" class="pill">5 questions</span>
+        </div>
+
+        <div id="quizStart" class="start-card">
+          <div class="start-icon">✦</div>
+          <h3>Ready to test yourself?</h3>
+          <p>Read each question carefully. Choose the best answer
+            before moving to the next one.</p>
+          <div class="stats">
+            <div><strong id="totalQuestions">5</strong><span>Questions</span></div>
+            <div><strong>15 sec</strong><span>Per question</span></div>
+            <div><strong>4</strong><span>Options each</span></div>
+          </div>
+          <button id="startBtn" class="primary-btn">Start quiz <span>→</span></button>
+        </div>
+
+        <div id="questionCard" class="question-card hidden">
+          <div class="quiz-meta">
+            <span id="progressText">Question 1 of 5</span>
+            <span class="timer">◷ <strong id="timer">15</strong>s</span>
+          </div>
+          <div class="progress-track"><div id="progressBar"></div></div>
+          <span id="categoryLabel" class="category">GENERAL KNOWLEDGE</span>
+          <h3 id="questionText"></h3>
+          <div id="options" class="options"></div>
+          <p id="feedback" class="feedback" aria-live="polite"></p>
+          <button id="nextBtn" class="primary-btn next-btn" disabled>
+            Next question <span>→</span>
+          </button>
+        </div>
+
+        <div id="resultCard" class="result-card hidden">
+          <div id="resultIcon" class="result-icon">✓</div>
+          <span class="eyebrow">QUIZ COMPLETED</span>
+          <h2 id="resultTitle">Well done!</h2>
+          <p id="resultMessage"></p>
+          <div class="score-circle">
+            <strong id="finalScore">0/5</strong>
+            <span>Your score</span>
+          </div>
+          <div class="result-actions">
+            <button id="reviewBtn" class="secondary-btn">Review answers</button>
+            <button id="restartBtn" class="primary-btn">Try again ↻</button>
+          </div>
+          <div id="reviewList" class="review-list hidden"></div>
+        </div>
+      </section>
+
+      <section id="createView" class="panel hidden">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">BUILD YOUR OWN</span>
+            <h2>Create a quiz</h2>
+          </div>
+          <span id="builderCount" class="pill">5 questions</span>
+        </div>
+
+        <label class="field-label" for="quizTitle">Quiz title</label>
+        <input id="quizTitle" class="text-input" maxlength="70"
+          value="My Knowledge Quiz" placeholder="Give your quiz a title">
+
+        <div id="builderQuestions"></div>
+
+        <div class="builder-actions">
+          <button id="addQuestionBtn" class="secondary-btn">+ Add question</button>
+          <button id="saveQuizBtn" class="primary-btn">Save & start quiz →</button>
+        </div>
+        <p id="builderMessage" class="builder-message" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer>
+      <span>QUIZ PRACTICE</span>
+      <span>Think carefully. Learn continuously.</span>
+    </footer>
+  </div>
+</body>
+</html>
